@@ -1,0 +1,25 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    background: linear-gradient(to right, rgba(249, 249, 249, 0.7), rgba(200, 201, 203, 0.7));
+}
+
+/*------------Inicio de Login-------------*/
+
+main .imagen-login{
+    background-image: url("../../../Image/login1.jpeg");
+    background-size: cover;
+    background-position: 45% 35%;
+    opacity: 0.9;
+    border-radius: 5px
+    
+}
+
+main div .logo-imagen{
+    background-color: aqua;
+    height: 100px;
+}
+
+/*------------Fin de Login-------------*/

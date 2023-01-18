@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Nav, Navbar, Button } from "react-bootstrap";
 import Form from 'react-bootstrap/Form';
 import { NavLink } from 'react-router-dom';
-import "./Navbar/Navbar.css"
+import "./Navbar.css"
 
 const NavbarScroll = () => {
   return (
@@ -29,7 +29,7 @@ const NavbarScroll = () => {
             className="me-2"
             aria-label="Search"
           />
-          <Button variant="outline-danger">Buscar</Button>
+          <Button variant="outline-dark">Buscar</Button>
         </Form>
       </Navbar.Collapse>
     </Container>
