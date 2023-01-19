@@ -7,6 +7,7 @@ import Contacto from '../Components/Pages/Contacto'
 import QuieroSerModelo from '../Components/Pages/QuieroSerModelo'
 import Staff from '../Components/Pages/Staff'
 import Login from '../Components/Pages/Login'
+import RecuperarPass from '../Components/Pages/RecuperarPass/RecuperarPass'
 
 
 
@@ -22,6 +23,7 @@ const RouterPrincipal = () => {
         <Route exact path='/QuieroSerModelo' element={<QuieroSerModelo/>}/>
         <Route exact path='/Staff' element={<Staff/>}/>
         <Route exact path='/Login' element={<Login/>}/>
+        <Route exact path='/recuperarPass' element={<RecuperarPass/>}/>
 
       </Routes>
       

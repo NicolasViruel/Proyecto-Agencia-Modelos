@@ -22,7 +22,7 @@ const Login = () => {
     .max(50, "Maximo 50 caracteres")
     .matches(
       regExpEmail,
-      "Recuerde deber tener un @ ejemplo@gmail.com"
+      "Recuerde deber tener un @, ejemplo@gmail.com"
     )
     .trim()
     .required("El Email es requerido"),
@@ -84,7 +84,7 @@ const Login = () => {
                     }
                     )} />
                     {formik.touched.email && formik.errors.email &&(
-                      <div className="fv-plugins-message-container text dark fw-bolder">
+                      <div className="fv-plugins-message-container text danger fw-bolder">
                          <span role="alert">{formik.errors.email}</span> 
                       </div>
                     )}
@@ -110,7 +110,7 @@ const Login = () => {
                         
                   />
                    {formik.touched.password && formik.errors.password && (
-                    <div className="fv-plugins-message-container text-dark fw-bolder">
+                    <div className="fv-plugins-message-container text-danger fw-bolder">
                     <span role="alert">{formik.errors.password}</span>
                     </div>
                   )}
@@ -129,7 +129,7 @@ const Login = () => {
                   <div>
                     <span>
                       <a
-                        href="#"
+                        href="/recuperarPass"
                         data-toggle="modal"
                         data-target="#exampleModal"
                         className="font-weight-bold text-decoration-none"
@@ -161,17 +161,6 @@ const Login = () => {
             <div alt="login1" className="imagen-login h-100 mt-3">
               <div className="">
                 <div className="col-lg-12 text-star mt-3">
-                  {/* <h1 className="font-weight-bolder text-danger">Preparate</h1>
-                  <br></br>
-                  <h3 className="text-white">No para encontrarte</h3>
-                  <h3 className="text-white">Sino para recordar</h3>
-                  <br></br>
-                  <h2 className="font-weight-bolder text-white">
-                    Quién has sido
-                  </h2>
-                  <h2 className="font-weight-bolder text-white ">
-                    Todo deste tiempo
-                  </h2> */}
                   <Image src={logo} alt="logo" width="100" className="logo-imagen" />
                   <br></br>
                   <br></br>

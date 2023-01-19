@@ -13,13 +13,8 @@ main .imagen-login{
     background-size: cover;
     background-position: 45% 35%;
     opacity: 0.9;
-    border-radius: 5px
+    border-radius: 5px;
     
-}
-
-main div .logo-imagen{
-    background-color: aqua;
-    height: 100px;
 }
 
 /*------------Fin de Login-------------*/
