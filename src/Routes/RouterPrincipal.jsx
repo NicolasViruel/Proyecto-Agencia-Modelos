@@ -7,7 +7,9 @@ import Contacto from '../Components/Pages/Contacto'
 import QuieroSerModelo from '../Components/Pages/QuieroSerModelo'
 import Staff from '../Components/Pages/Staff'
 import Login from '../Components/Pages/Login'
-
+import Administrador from "../Components/Pages/Views/Administrador"
+import EditarModelo from "../Components/Pages/Views/Modelos/EditarModelo"
+import CrearModelo from "../Components/Pages/Views/Modelos/CrearModelo"
 
 
 const RouterPrincipal = () => {
@@ -22,6 +24,9 @@ const RouterPrincipal = () => {
         <Route exact path='/QuieroSerModelo' element={<QuieroSerModelo/>}/>
         <Route exact path='/Staff' element={<Staff/>}/>
         <Route exact path='/Login' element={<Login/>}/>
+        <Route exact path='/Administrador' element={<Administrador/>}/>
+        <Route exact path='/Administrar/crear-modelo' element={<CrearModelo/>}/>
+        <Route exact path='/Administrar/editar/:id' element={<EditarModelo/>}/>
 
       </Routes>
       
