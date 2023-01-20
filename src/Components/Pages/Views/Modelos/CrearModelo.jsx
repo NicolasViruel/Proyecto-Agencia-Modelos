@@ -1,5 +1,8 @@
 import { Form, Button } from "react-bootstrap";
 import {useForm} from "react-hook-form"
+import Swal from "sweetalert2";
+import { crearModeloAPI } from "../../../../helpers/queries";
+import { useNavigate } from "react-router-dom";
 
 const CrearModelo = () => {
     const {register, handleSubmit, formState:{errors}} = useForm({
@@ -16,9 +19,18 @@ const CrearModelo = () => {
             cadera:1,
         }}
     );
+    const navegacion = useNavigate();
+
     const onSubmit = (datos)=>{
-        console.log(datos)
-        console.log("desde mi funcion submit")
+      console.log(datos)
+      crearModeloAPI(datos).then((respuesta)=>{
+        if(respuesta.status === 201){
+          Swal.fire("Modelo creada", "La modelo fue creada correctamente","success");
+          navegacion("/administrador");
+        }else{
+          Swal.fire("Ocurrio un error","Vuelva a intentarlo mas tarde","error");
+        }
+      })
     }
 
   return (
@@ -75,7 +87,7 @@ const CrearModelo = () => {
           <Form.Label>Color de Ojos*</Form.Label>
           <Form.Control
             type="text"
-            placeholder="azules"
+            placeholder="Ej: azules"
             {...register("colorOjos",{
                 required:"Este dato es obligatorio*",
                 minLength:{
@@ -94,9 +106,20 @@ const CrearModelo = () => {
           <Form.Label>Color de Pelo*</Form.Label>
           <Form.Control
             type="text"
-            placeholder="negro"
+            placeholder="Ej: negro"
+            {...register("colorPelo",{
+              required:"Este dato es obligatorio*",
+              minLength:{
+                  value:5,
+                  message: "Debe ingresar como minimo 4 caracteres"
+              },
+              maxLength:{
+                  value:20,
+                  message: "Debe ingresar como maximo 20 caracteres"
+              }
+          })}
           />
-          <Form.Text className="text-danger">algun error</Form.Text>
+          <Form.Text className="text-danger">{errors.colorPelo?.message}</Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formImagen">
           <Form.Label>Altura*</Form.Label>

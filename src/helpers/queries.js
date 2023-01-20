@@ -11,3 +11,19 @@ export const consultarAPI = async()=>{
         console.log(error)
     }
 }
+
+
+export const crearModeloAPI = async(modelo)=>{
+    try{
+        const respuesta = await fetch(URL,{
+            method: "POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(modelo)
+        });
+        return respuesta;
+    }catch(error){
+        console.log(error)
+    }
+}
