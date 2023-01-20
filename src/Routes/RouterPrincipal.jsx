@@ -10,6 +10,7 @@ import Login from '../Components/Pages/Login'
 import Administrador from "../Components/Pages/Views/Administrador"
 import EditarModelo from "../Components/Pages/Views/Modelos/EditarModelo"
 import CrearModelo from "../Components/Pages/Views/Modelos/CrearModelo"
+import DetalleModelo from "../Components/Pages/Views/DetalleModelo"
 
 
 const RouterPrincipal = () => {
@@ -27,6 +28,7 @@ const RouterPrincipal = () => {
         <Route exact path='/Administrador' element={<Administrador/>}/>
         <Route exact path='/Administrar/crear-modelo' element={<CrearModelo/>}/>
         <Route exact path='/Administrar/editar/:id' element={<EditarModelo/>}/>
+        <Route exact path='/detalle-modelo/:id' element={<DetalleModelo/>}/>
 
       </Routes>
       
