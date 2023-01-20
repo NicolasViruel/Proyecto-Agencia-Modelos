@@ -1,29 +1,74 @@
+import { useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 import {useForm} from "react-hook-form"
+import {Link, useParams, useNavigate} from "react-router-dom"
+import Swal from "sweetalert2";
+import { editarModeloAPI, obtenerModeloAPI } from "../../../../helpers/queries";
 
-const CrearModelo = () => {
-    const {register, handleSubmit, formState:{errors}} = useForm({
-        defaultValues:{
-            nombreModelo:"",
-            imagen:"",
-            edad: 1,
-            colorOjos:"",
-            colorPelo:"",
-            altura:1,
-            calzado:1,
-            pecho:1,
-            cintura:1,
-            cadera:1,
-        }}
-    );
+
+const EditarModelo = () => {
+    //traer el parametro de la ruta
+    const {id} = useParams();
+    const {
+      register, 
+      handleSubmit, 
+      formState:{errors},
+      setValue
+    } = useForm({
+      defaultValues:{
+          nombreModelo:"",
+          imagen:"",
+          edad: 1,
+          colorOjos:"",
+          colorPelo:"",
+          altura:1,
+          calzado:1,
+          pecho:1,
+          cintura:1,
+          cadera:1,
+      }}
+  );
+  const navegacion = useNavigate();
+    useEffect(() => {
+      obtenerModeloAPI(id).then((respuesta)=>{
+        console.log(respuesta)
+        if(respuesta.status === 200){
+          //cargar los datos de la respuesta en el formulario
+          setValue("nombreModelo", respuesta.dato.nombreModelo)
+          setValue("imagen", respuesta.dato.imagen)
+          setValue("edad", respuesta.dato.edad)
+          setValue("colorOjos", respuesta.dato.colorOjos)
+          setValue("colorPelo", respuesta.dato.colorPelo)
+          setValue("altura", respuesta.dato.altura)
+          setValue("calzado", respuesta.dato.calzado)
+          setValue("pecho", respuesta.dato.pecho)
+          setValue("cintura", respuesta.dato.cintura)
+          setValue("cadera", respuesta.dato.cadera)
+
+        }else{
+          Swal.fire("Ocurrio un error","Intente es paso mas tarde","error")
+        }
+      })
+    },[])
+    
+  
     const onSubmit = (datos)=>{
         console.log(datos)
-        console.log("desde mi funcion submit")
+        editarModeloAPI(id,datos).then((datos)=>{
+          if(datos.status === 200){
+            Swal.fire("Modelo actualizada","La modelo fue actualizada correctamente","succes")
+            navegacion("/administrador")
+          }else{
+            Swal.fire("Ocurrio un error","Intente es paso mas tarde","error")
+          }
+        })
     }
 
   return (
     <section className="container mainSection">
       <h1 className="display-4 mt-5">Editar Modelo</h1>
+      <Link  className="btn btn-primary" to="/administrador"><i class='fas fa-chevron-left'></i> Volver</Link>
+
       <hr />
       <Form className="my-5" onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3" controlId="formNombreProdcuto">
@@ -49,8 +94,16 @@ const CrearModelo = () => {
         </Form.Group>
         <Form.Group className="mb-3" controlId="formPrecio">
           <Form.Label>Imagen URL*</Form.Label>
-          <Form.Control type="text" placeholder="Ej: https://www.pexels.com/es-es/vans-en-blanco-y-negro-fuera-de-la-decoracion-para-colgar-en-la-pared-1230679/" />
-          <Form.Text className="text-danger">algun error</Form.Text>
+          <Form.Control type="text" placeholder="Ej: https://www.pexels.com/es-es/vans-en-blanco-y-negro-fuera-de-la-decoracion-para-colgar-en-la-pared-1230679/" 
+          {...register("imagen",{
+            required:"La URL de la imagen es obligatoria",
+            pattern:{
+              value:/^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/,
+              message:"Debe ingresar una URL valida"
+            }
+          })}
+          />
+          <Form.Text className="text-danger">{errors.imagen?.message}</Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formImagen">
           <Form.Label>Edad*</Form.Label>
@@ -95,8 +148,19 @@ const CrearModelo = () => {
           <Form.Control
             type="text"
             placeholder="negro"
+            {...register("colorPelo",{
+              required:"Este dato es obligatorio*",
+              minLength:{
+                  value:5,
+                  message: "Debe ingresar como minimo 4 caracteres"
+              },
+              maxLength:{
+                  value:20,
+                  message: "Debe ingresar como maximo 20 caracteres"
+              }
+          })}
           />
-          <Form.Text className="text-danger">algun error</Form.Text>
+          <Form.Text className="text-danger">{errors.colorPelo?.message}</Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formImagen">
           <Form.Label>Altura*</Form.Label>
@@ -209,4 +273,4 @@ const CrearModelo = () => {
   );
 };
 
-export default CrearModelo;
+export default EditarModelo;

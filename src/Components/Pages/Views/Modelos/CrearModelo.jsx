@@ -3,6 +3,7 @@ import {useForm} from "react-hook-form"
 import Swal from "sweetalert2";
 import { crearModeloAPI } from "../../../../helpers/queries";
 import { useNavigate } from "react-router-dom";
+import {Link} from "react-router-dom"
 
 const CrearModelo = () => {
     const {register, handleSubmit, formState:{errors}} = useForm({
@@ -36,6 +37,8 @@ const CrearModelo = () => {
   return (
     <section className="container mainSection">
       <h1 className="display-4 mt-5">Nueva Modelo</h1>
+      <Link  className="btn btn-primary" to="/administrador"><i class='fas fa-chevron-left'></i> Volver</Link>
+
       <hr />
       <Form className="my-5" onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3" controlId="formNombreProdcuto">
@@ -61,8 +64,16 @@ const CrearModelo = () => {
         </Form.Group>
         <Form.Group className="mb-3" controlId="formPrecio">
           <Form.Label>Imagen URL*</Form.Label>
-          <Form.Control type="text" placeholder="Ej: https://www.pexels.com/es-es/vans-en-blanco-y-negro-fuera-de-la-decoracion-para-colgar-en-la-pared-1230679/" />
-          <Form.Text className="text-danger">algun error</Form.Text>
+          <Form.Control type="text" placeholder="Ej: https://www.pexels.com/es-es/vans-en-blanco-y-negro-fuera-de-la-decoracion-para-colgar-en-la-pared-1230679/"
+          {...register("imagen",{
+            required:"La URL de la imagen es obligatoria",
+            pattern:{
+              value:/^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/,
+              message:"Debe ingresar una URL valida"
+            }
+          })}
+          />
+          <Form.Text className="text-danger">{errors.imagen?.message}</Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formImagen">
           <Form.Label>Edad*</Form.Label>

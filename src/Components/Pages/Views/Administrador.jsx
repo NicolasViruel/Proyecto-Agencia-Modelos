@@ -19,7 +19,7 @@ const Administrador = () => {
         <section>
             <div className='d-flex justify-content-between align-items-center mt-5'>
                 <h1 className='display-4'>Modelos Disponibles</h1>
-                <Link className="btn btn-primary" to="/Administrar/crear-modelo">Agregar</Link>
+                <Link className="btn btn-primary" to="/Administrar/crear-modelo">Agregar <i class="fa fa-plus" aria-hidden="true"></i></Link>
 
             </div>
             <hr />
@@ -41,7 +41,7 @@ const Administrador = () => {
                 </thead>
                 <tbody>
                     {
-                        modelos.map((modelo)=> <ItemModelo key={modelo.id} modelo={modelo}></ItemModelo>)
+                        modelos.map((modelo)=> <ItemModelo key={modelo.id} modelo={modelo} setModelos={setModelos}></ItemModelo>)
                     }
                 </tbody>
             </Table>

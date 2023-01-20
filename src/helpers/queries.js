@@ -27,3 +27,42 @@ export const crearModeloAPI = async(modelo)=>{
         console.log(error)
     }
 }
+
+export const borrarModeloAPI = async(id)=>{
+    try{
+        const respuesta = await fetch(`${URL}/${id}`,{
+            method: "DELETE",
+        });
+        return respuesta;
+    }catch(error){
+        console.log(error)
+    }
+}
+
+export const obtenerModeloAPI = async(id)=>{
+    try{
+        const respuesta = await fetch(URL+"/"+id);
+        const modeloBuscada = {
+            dato: await respuesta.json(),
+            status: respuesta.status
+        }
+        return modeloBuscada;
+    }catch(error){
+        console.log(error)
+    }
+}
+
+export const editarModeloAPI = async(id,datosActualizados)=>{
+    try{
+        const respuesta = await fetch(URL+"/"+id,{
+            method: "PUT",
+            headers:{
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(datosActualizados)
+        });
+        return respuesta;
+    }catch(error){
+        console.log(error)
+    }
+}
