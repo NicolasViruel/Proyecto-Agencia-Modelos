@@ -1,15 +1,27 @@
 import React from 'react';
-import {Button, Card} from "react-bootstrap"
+import { Card} from "react-bootstrap"
+import { Link } from "react-router-dom";
 
-const CardModelo = () => {
+
+const CardModelo = ({modelo}) => {
     return (
-        <Card className='my-4'>
-            <Card.Img variant="top" src='https://images.pexels.com/photos/1689731/pexels-photo-1689731.jpeg?auto=compress&cs=tinysrgb&w=400' className='img-fluid'/>
-            <Card.Body>
-                <Card.Title>Pamela Chu</Card.Title>
-                <Card.Text>dsdsdsd</Card.Text>
-            </Card.Body>
-        </Card>
+        <Card
+        style={{ width: "18rem" }}
+        className="m-5 img-fluid shadow p-4 mb-3 bg-white rounded"
+      >
+        <Card.Img
+          variant="top"
+          src={modelo.imagen}
+        />
+        <Card.Body>
+          <Card.Title>{modelo.nombreModelo}</Card.Title>
+          <Card.Text>
+            ¡Mariana Rojas, con su aspecto audaz y su encanto de colegial, puede
+            hacer que tu corazón dé un vuelco!
+          </Card.Text>
+          <Link className="my-3 btn btn-primary" to={`/detalle-modelo/${modelo.id}`}>Ver detalle</Link>
+        </Card.Body>
+      </Card>
     );
 };
 
