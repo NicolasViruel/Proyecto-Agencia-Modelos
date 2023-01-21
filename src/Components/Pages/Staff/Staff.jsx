@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import "../Staff/staff.css";
 import CardModelo from "../Views/Modelos/CardModelo";
 import { consultarAPI } from "../../../helpers/queries";
 import { Container, Row } from "react-bootstrap";
+import "../Staff/staff.css";
 
 const Staff = () => {
   const [modelos, setModelos] = useState([]);
