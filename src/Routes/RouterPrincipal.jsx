@@ -11,6 +11,7 @@ import Administrador from "../Components/Pages/Views/Administrador"
 import EditarModelo from "../Components/Pages/Views/Modelos/EditarModelo"
 import CrearModelo from "../Components/Pages/Views/Modelos/CrearModelo"
 import DetalleModelo from "../Components/Pages/Views/DetalleModelo"
+import Error404 from '../Components/Pages/Views/Error404'
 
 
 const RouterPrincipal = () => {
@@ -29,6 +30,7 @@ const RouterPrincipal = () => {
         <Route exact path='/Administrar/crear-modelo' element={<CrearModelo/>}/>
         <Route exact path='/Administrar/editar/:id' element={<EditarModelo/>}/>
         <Route exact path='/detalle-modelo/:id' element={<DetalleModelo/>}/>
+        <Route exact path='/error404' element={<Error404/>}/>
 
       </Routes>
       
