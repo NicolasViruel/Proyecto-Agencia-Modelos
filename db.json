@@ -1,0 +1,43 @@
+{
+  "modelos": [
+    {
+      "nombreModelo": "Juana de Arco v3",
+      "imagen": "https://images.pexels.com/photos/1921168/pexels-photo-1921168.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "edad": "30",
+      "colorOjos": "rojos",
+      "colorPelo": "rubio",
+      "altura": 1.7,
+      "calzado": 40,
+      "pecho": 90,
+      "cintura": 60,
+      "cadera": 90,
+      "id": 3
+    },
+    {
+      "nombreModelo": "Javier shocklender",
+      "imagen": "https://images.pexels.com/photos/1921168/pexels-photo-1921168.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "edad": 27,
+      "colorOjos": "verde",
+      "colorPelo": "rubio",
+      "altura": 1.76,
+      "calzado": 37,
+      "pecho": 65,
+      "cintura": 70,
+      "cadera": 96,
+      "id": 4
+    },
+    {
+      "nombreModelo": "jorge barrioviejo",
+      "imagen": "https://images.pexels.com/photos/1921168/pexels-photo-1921168.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "edad": "33",
+      "colorOjos": "azules",
+      "colorPelo": "negro",
+      "altura": "1.9",
+      "calzado": "38",
+      "pecho": "20",
+      "cintura": "90",
+      "cadera": "90",
+      "id": 7
+    }
+  ]
+}
