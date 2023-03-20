@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Maitree:wght@200;300&display=swap');
+
+.academyBox{
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.agencyBox{
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.agenciaText{
+    font-size: 50;
+    font-family: 'Maitree', serif
+    
+}
+
+.academiaText{
+    font-size: 50;
+    font-family: 'Maitree', serif
+}

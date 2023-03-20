@@ -18,7 +18,8 @@ const NavbarScroll = () => {
         >
           <NavLink className="nav-link " to="/">Home</NavLink>
           <NavLink className="nav-link " to="/Contacto">Contacto</NavLink>
-          <NavLink className="nav-link " to="/QuieroSerModelo">Quiero ser Modelo</NavLink>
+          <NavLink className="nav-link " to="/Academia">Academia</NavLink>
+          <NavLink className="nav-link " to="/Agencia">Agencia</NavLink>
           <NavLink className="nav-link " to="/Staff">Staff</NavLink>
           <NavLink className="nav-link " to="/AboutUs">Quienes Somos</NavLink>
           <NavLink className="nav-link " to="/Login">Login</NavLink>
