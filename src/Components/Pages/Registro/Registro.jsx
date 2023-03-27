@@ -5,21 +5,22 @@ import Form from "react-bootstrap/Form";
 import { Image } from "react-bootstrap";
 import logo from "../../../Image/Imagen.jpg";
 import { regExpEmail, regExpPassword } from "../../helpers/Validate";
-// import instance from "../../api/axiosUsuarios";
 import Swal from "sweetalert2";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import clsx from "clsx";
+import {useAuth} from '../../../Context/authContext'
 
 const Registro = ({ show, handleClose }) => {
 
+  const { signup } = useAuth()
 
   const RegisterSchema = Yup.object().shape({
-    name: Yup.string()
-      .min(8, "Minimo 8 caracteres")
-      .max(50, "Maximo 50 caracteres")
-      .trim()
-      .required("El nombre es requerido"),
+    // name: Yup.string()
+    //   .min(8, "Minimo 8 caracteres")
+    //   .max(50, "Maximo 50 caracteres")
+    //   .trim()
+    //   .required("El nombre es requerido"),
     email: Yup.string()
       .min(8, "Minimo 8 caracteres")
       .max(50, "Maximo 50 caracteres")
@@ -39,18 +40,18 @@ const Registro = ({ show, handleClose }) => {
       )
       .trim()
       .required("La password es requerida"),
-    confirmPassword: Yup.string()
-      .min(8, "Minimo 8 caracteres")
-      .max(15, "Maximo 15 caracteres")
-      .oneOf([Yup.ref("password")], "Las contraseñas deben ser las mismas")
-      .required("Confirmacion de password es requerida"),
+    // confirmPassword: Yup.string()
+    //   .min(8, "Minimo 8 caracteres")
+    //   .max(15, "Maximo 15 caracteres")
+    //   .oneOf([Yup.ref("password")], "Las contraseñas deben ser las mismas")
+    //   .required("Confirmacion de password es requerida"),
   });
 
   const initialValues = {
-    name: "",
+    // name: "",
     email: "",
     password: "",
-    confirmPassword: "",
+    // confirmPassword: "",
   };
 
   const formik = useFormik({
@@ -58,36 +59,36 @@ const Registro = ({ show, handleClose }) => {
     initialValues,
     validateOnChange: true,
     onSubmit: async (values) => {
-        Swal.fire({
-            title: 'Creando...!',
-            allowEscapeKey: false,
-            allowOutsideClick: false,
-            showConfirmButton: false,
-            willOpen: () => {
-              Swal.showLoading()
-            },
-          })
       const newRegister = {
-        name: values.name,
+        // name: values.name,
         email: values.email,
         password: values.password,
-        confirmPassword: values.confirmPassword,
+        // confirmPassword: values.confirmPassword,
       };
-    //   try {
-    //     const res = await instance.post("/auth/register", newRegister);
-    //     console.log(res);
-    //     Swal.close();
-    //     handleClose();
-    //   } catch (error) {
-    //     Swal.fire({
-    //       icon: "error",
-    //       title: "Oops...",
-    //       text: error?.response?.msg ? error?.response?.msg : "error",
-    //     });
-    //     console.log(error);
-    //   }
+      try {
+        const res = await signup(newRegister.email,newRegister.password)
+        if (newRegister.email === auth/email-already)
+          console.log(error.message);
+        Swal.fire({
+          icon: "success",
+          title: "Bienvenido!",
+          text: "Ya estas registrado!",
+        });
+        handleClose();
+        formik.resetForm()
+        // Swal.close();
+        
+      } catch (error) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: error?.response?.msg ? error?.response?.msg : "Error, Email ya registrado",
+        });
+        console.error(error);
+      }
     },
   });
+
   return (
     <>
       <Modal show={show} onHide={handleClose} backdrop="static">
@@ -99,7 +100,7 @@ const Registro = ({ show, handleClose }) => {
         </Modal.Header>
         <Modal.Body>
           <Form noValidate onSubmit={formik.handleSubmit}>
-            <Form.Group className="mb-3" controlId="formBasicName">
+            {/* <Form.Group className="mb-3" controlId="formBasicName">
               <Form.Label>Nombre</Form.Label>
               <Form.Control
                 type="text"
@@ -123,8 +124,8 @@ const Registro = ({ show, handleClose }) => {
                     <span role="alert">{formik.errors.name}</span>
                   </div>
                 )}
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            </Form.Group> */}
+            <Form.Group className="mb-3" controlId="formBasicEmail" >
             <Form.Label>Email</Form.Label>
             <Form.Control
               type="email"
@@ -149,7 +150,7 @@ const Registro = ({ show, handleClose }) => {
               </div>
             )}
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Group className="mb-3" controlId="formBasicPassword" >
             <Form.Label>Password</Form.Label>
             <Form.Control
               type="password"
@@ -175,7 +176,7 @@ const Registro = ({ show, handleClose }) => {
             )}
             
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formConfirmPassword">
+          {/* <Form.Group className="mb-3" controlId="formConfirmPassword">
             <Form.Label>Confirmar Password</Form.Label>
             <Form.Control
               type="password"
@@ -199,7 +200,7 @@ const Registro = ({ show, handleClose }) => {
                 <span role="alert">{formik.errors.confirmPassword}</span>
               </div>
             )}
-          </Form.Group>
+          </Form.Group> */}
           <div className="d-grid gap-2">
             <Button variant="dark" type="submit">
               Enviar

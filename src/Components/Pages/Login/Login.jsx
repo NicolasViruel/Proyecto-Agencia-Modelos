@@ -1,20 +1,26 @@
 import React, { useState } from "react";
-import { Col, Container, Form, Row, Image, FormFloating, Button, FormLabel } from "react-bootstrap";
+import {useAuth} from '../../../Context/authContext'
+import { useFormik } from "formik";
+import { Col, Container, Form, Row, Image, Button, FormLabel } from "react-bootstrap";
 import logo from "../../../Image/Imagen.jpg";
 import "./Login.css";
 import { regExpEmail, regExpPassword} from "../../helpers/Validate";
-import { useFormik } from "formik";
 import * as Yup from "yup";
 import clsx from "clsx";
 import FormCheckInput from "react-bootstrap/esm/FormCheckInput";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Registro from "../Registro/Registro"
+import Swal from "sweetalert2";
 
 const Login = () => {
   const [isDisabled , setIsDisabled] = useState(false)
   const [reg, setReg] = useState(false);
   const handleCloses = () => setReg(false);
   const handleShow = () => setReg(true);
+
+  const navigate = useNavigate();
+  const { login } = useAuth()
+
 
   const LoginSchema = Yup.object().shape({
     email: Yup.string()
@@ -49,12 +55,27 @@ const Login = () => {
         password: values.password,
         confirmPassword: values.confirmPassword,
       }
+      try {
+        const res = await login(newLogin.email,newLogin.password)
+        navigate("/")
+        Swal.fire({
+          icon: "success",
+          title: "Bienvenido!",
+          text: "Ya estas Logueado!",
+        });
+        formik.resetForm()
+      } catch (error) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: error?.response?.msg ? error?.response?.msg : "Error, Email ya registrado",
+        });
+        console.error(error);
+      }
     }
   })
 
-
-
-
+ 
   return (
     <>
       <Container>
@@ -132,7 +153,7 @@ const Login = () => {
                         href="/recuperarPass"
                         data-toggle="modal"
                         data-target="#exampleModal"
-                        className="font-weight-bold text-decoration-none"
+                        className="fw-bold text-decoration-none"
                       >
                         Recuperar contraseña
                       </a>
@@ -144,7 +165,7 @@ const Login = () => {
                     <Link
                     data-toggle="modal"
                     data-target="#exampleModal"
-                    className="font-weight-bold text-decoration-none"
+                    className="fw-bold text-decoration-none"
                     onClick={handleShow}
                     >
                 Registrate

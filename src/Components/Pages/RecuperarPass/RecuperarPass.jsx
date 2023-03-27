@@ -6,9 +6,12 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import clsx from "clsx";
 import {regExpEmail} from "../../helpers/Validate"
+import { useAuth } from '../../../Context/authContext';
+import { async } from '@firebase/util';
 
 const RecuperarPass = () => {
     const [email , setEmail] = useState("");
+    const {resetPassword, user} = useAuth();
 
     const RecuperarPass = Yup.object().shape({
         email: Yup.string()
@@ -36,6 +39,15 @@ const RecuperarPass = () => {
             }
         }
     })
+
+    const handleResetPassword = async() => {
+        if (!user.email ) return <h2>Ingresa un Email</h2>
+        try {
+            await resetPassword(user.email);
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
 
 
   return (
@@ -69,7 +81,7 @@ const RecuperarPass = () => {
                 </Form.Group>
                 </Form>
                 <div className='mt-3 mb-3 text-end'>
-                    <Button type="submit" variant="dark">
+                    <Button type="submit" variant="dark" onClick={handleResetPassword}>
                     Enviar
                   </Button>
                 </div>

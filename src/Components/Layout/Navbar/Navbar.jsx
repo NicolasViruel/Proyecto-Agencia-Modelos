@@ -1,10 +1,21 @@
 import React from 'react'
 import { Container, Nav, Navbar, Button } from "react-bootstrap";
 import Form from 'react-bootstrap/Form';
-import { NavLink } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
+import { useAuth } from '../../../Context/authContext';
 import "./Navbar.css"
 
+
 const NavbarScroll = () => {
+  const {logout, loading} = useAuth()
+ 
+  const handleLogout = async () =>{
+    await logout();
+  }
+
+  if (loading) return <h2>Loading</h2>
+
+
   return (
     <Navbar className="bg-ligth text-center" expand="lg">
     <Container fluid>
@@ -30,6 +41,7 @@ const NavbarScroll = () => {
             aria-label="Search"
           />
           <Button variant="outline-dark">Buscar</Button>
+          <Button variant="outline-danger" onClick={handleLogout}>Logout</Button>
         </Form>
       </Navbar.Collapse>
     </Container>

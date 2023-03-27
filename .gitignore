@@ -28,3 +28,6 @@ dist-ssr
 
 #Node_modules
 node_modules
+
+#Firebase
+Firebase
