@@ -18,7 +18,8 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.2",
     "sweetalert2": "^11.7.0",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "mdb-react-ui-kit": "^5.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",

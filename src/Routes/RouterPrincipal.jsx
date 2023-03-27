@@ -10,6 +10,13 @@ import Login from '../Components/Pages/Login'
 import RecuperarPass from '../Components/Pages/RecuperarPass/RecuperarPass'
 import { AuthProvider } from "../Context/authContext"
 import { ProtectecRoute } from '../Components/ProtectecRoute/ProtectecRoute'
+import Administrador from "../Components/Pages/Views/Administrador"
+import EditarModelo from "../Components/Pages/Views/Modelos/EditarModelo"
+import CrearModelo from "../Components/Pages/Views/Modelos/CrearModelo"
+import DetalleModelo from "../Components/Pages/Views/DetalleModelo"
+import Error404 from '../Components/Pages/Views/Error404'
+import AboutUs from '../Components/Pages/Views/AboutUs'
+import Perfilacademico from '../Components/Pages/Academia/Perfilacademico'
 
 
 const RouterPrincipal = () => {
@@ -26,6 +33,13 @@ const RouterPrincipal = () => {
           <Route exact path='/Staff' element={<Staff/>}/>
           <Route exact path='/Login' element={<Login/>}/>
           <Route exact path='/recuperarPass' element={<RecuperarPass/>}/>
+          <Route exact path='/Administrador' element={<Administrador/>}/>
+          <Route exact path='/Administrar/crear-modelo' element={<CrearModelo/>}/>
+          <Route exact path='/Administrar/editar/:id' element={<EditarModelo/>}/>
+          <Route exact path='/detalle-modelo/:id' element={<DetalleModelo/>}/>
+          <Route exact path='/error404' element={<Error404/>}/>
+          <Route exact path='/AboutUs' element={<AboutUs/>}/>
+          <Route exact path='/Perfilacademico' element={<Perfilacademico/>}/>
         </Routes>
       </AuthProvider>
       <Footer/>
