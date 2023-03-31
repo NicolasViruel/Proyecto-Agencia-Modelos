@@ -37,7 +37,7 @@ const CrearModelo = () => {
   return (
     <section className="container mainSection">
       <h1 className="display-4 mt-5">Nueva Modelo</h1>
-      <Link  className="btn btn-primary" to="/administrador"><i class='fas fa-chevron-left'></i> Volver</Link>
+      <Link  className="btn btn-primary" to="/administrador"><i className='fas fa-chevron-left'></i> Volver</Link>
 
       <hr />
       <Form className="my-5" onSubmit={handleSubmit(onSubmit)}>
