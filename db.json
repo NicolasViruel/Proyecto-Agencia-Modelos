@@ -39,5 +39,53 @@
       "cadera": "90",
       "id": 7
     }
+  ],
+  "alumnos": [
+    {
+      "nombreAlumno": "Juana de Arco v7",
+      "imagen": "",
+      "edad": "28",
+      "colorOjos": "",
+      "colorPelo": "",
+      "altura": 1,
+      "calzado": 1,
+      "pecho": 1,
+      "cintura": 1,
+      "cadera": 1,
+      "estadoacademico": "cursando",
+      "correo": "juanadearco@gmail.com",
+      "id": 1
+    },
+    {
+      "nombreAlumno": "Roberto Carlos Maslaton",
+      "imagen": "",
+      "edad": "28",
+      "colorOjos": "",
+      "colorPelo": "",
+      "altura": 1,
+      "calzado": 1,
+      "pecho": 1,
+      "cintura": 1,
+      "cadera": 1,
+      "estadoacademico": "cursando",
+      "correo": "robertomaslaton@gmail.com",
+      "id": 2
+    },
+    {
+      "nombreModelo": "",
+      "imagen": "",
+      "edad": "23",
+      "colorOjos": "",
+      "colorPelo": "",
+      "altura": 1,
+      "calzado": 1,
+      "pecho": 1,
+      "cintura": 1,
+      "cadera": 1,
+      "nombreAlumno": "Mariano Martin",
+      "estadoacademico": "Cursando",
+      "correo": "marianomartin@gmail.com",
+      "id": 3
+    }
   ]
 }

@@ -15,7 +15,10 @@ import Error404 from '../Components/Pages/Views/Error404'
 import AboutUs from '../Components/Pages/Views/AboutUs'
 import Perfilacademico from '../Components/Pages/Academia/Perfilacademico'
 import CrearAlumno from "../Components/Pages/Views/Modelos/CrearAlumno"
+import EditarAlumno from "../Components/Pages/Views/Modelos/EditarAlumno"
 import EditarPerfil from '../Components/Pages/Academia/EditarPerfil'
+import AdministrarAlumnos from '../Components/Pages/Views/Modelos/AdministrarAlumnos'
+import AdministrarModelos from "../Components/Pages/Views/Modelos/AdministrarModelos"
 
 
 const RouterPrincipal = () => {
@@ -33,6 +36,9 @@ const RouterPrincipal = () => {
         <Route exact path='/Administrador' element={<Administrador/>}/>
         <Route exact path='/Administrar/crear-modelo' element={<CrearModelo/>}/>
         <Route exact path='/Administrar/crear-alumno' element={<CrearAlumno/>}/>
+        <Route exact path='/Administrar/editar-alumno/:id' element={<EditarAlumno/>}/>
+        <Route exact path='/Administrar/Administrar-Campus' element={<AdministrarAlumnos/>}/>
+        <Route exact path='/Administrar/Administrar-Modelos' element={<AdministrarModelos/>}/>
         <Route exact path='/Administrar/editar/:id' element={<EditarModelo/>}/>
         <Route exact path='/detalle-modelo/:id' element={<DetalleModelo/>}/>
         <Route exact path='/AboutUs' element={<AboutUs/>}/>
