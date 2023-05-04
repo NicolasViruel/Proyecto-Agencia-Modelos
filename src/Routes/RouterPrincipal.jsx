@@ -27,7 +27,7 @@ const RouterPrincipal = () => {
       <AuthProvider>
       <Navbar/>
         <Routes>
-          <Route exact path='/' element={ <ProtectecRoute> <Home/> </ProtectecRoute>  }/>
+          <Route exact path='/' element={<Home/>}/>
           <Route exact path='/Contacto' element={<Contacto/>}/>
           <Route exact path='/QuieroSerModelo' element={<QuieroSerModelo/>}/>
           <Route exact path='/Staff' element={<Staff/>}/>
@@ -39,7 +39,9 @@ const RouterPrincipal = () => {
           <Route exact path='/detalle-modelo/:id' element={<DetalleModelo/>}/>
           <Route exact path='/error404' element={<Error404/>}/>
           <Route exact path='/AboutUs' element={<AboutUs/>}/>
-          <Route exact path='/Perfilacademico' element={<Perfilacademico/>}/>
+
+          {/* Rutas privadas */}
+          <Route exact path='/Perfilacademico' element={ <ProtectecRoute> <Perfilacademico/> </ProtectecRoute>}/>
         </Routes>
       </AuthProvider>
       <Footer/>

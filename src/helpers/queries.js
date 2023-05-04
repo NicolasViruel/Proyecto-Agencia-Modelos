@@ -1,32 +1,32 @@
-// archivo de consulta a la api
-
-export const URL = "http://localhost:3004/modelos";
-
-export const consultarAPI = async()=>{
-    try{
-        const respuesta = await fetch(URL);
-        const listaModelos = await respuesta.json()
-        return listaModelos
-    }catch(error){
-        console.log(error)
-    }
-}
-
+export const URL = "http://localhost:3004";
 
 export const crearModeloAPI = async(modelo)=>{
     try{
-        const respuesta = await fetch(URL,{
+        const respuesta = await fetch(URL+"/"+"test"+"/"+"newcontact" ,{
             method: "POST",
             headers:{
                 "Content-Type":"application/json"
             },
             body: JSON.stringify(modelo)
         });
+        console.log(respuesta);
         return respuesta;
     }catch(error){
         console.log(error)
     }
 }
+
+export const consultarAPI = async(modelo)=>{
+    try{
+        const respuesta = await fetch(URL+"/"+"test");
+        const listaModelos = await respuesta.json()
+        return listaModelos
+    }catch(error){
+        console.log(error)
+    }
+
+}
+
 
 export const borrarModeloAPI = async(id)=>{
     try{
@@ -41,7 +41,7 @@ export const borrarModeloAPI = async(id)=>{
 
 export const obtenerModeloAPI = async(id)=>{
     try{
-        const respuesta = await fetch(URL+"/"+id);
+        const respuesta = await fetch(URL+"/"+"test"+"/"+`${id}`);
         const modeloBuscada = {
             dato: await respuesta.json(),
             status: respuesta.status
@@ -49,6 +49,7 @@ export const obtenerModeloAPI = async(id)=>{
         return modeloBuscada;
     }catch(error){
         console.log(error)
+    
     }
 }
 
