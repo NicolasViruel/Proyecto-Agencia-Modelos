@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Badge, Card, Col, Row, Table } from "react-bootstrap";
+import { Card, Col, Row } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import { obtenerModeloAPI } from "../../../helpers/queries";
@@ -10,7 +10,9 @@ const DetalleProducto = () => {
 
   useEffect(() => {
     obtenerModeloAPI(id).then((respuesta) => {
+      console.log(respuesta);
       if (respuesta.status === 200) {
+        console.log(respuesta);
         setModelo(respuesta.dato);
       } else {
         Swal.fire("Ocurrio un error", "Vuelva a intentarlo", "error");
@@ -21,7 +23,7 @@ const DetalleProducto = () => {
   return (
     <div>
       <Link className="btn btn-primary m-5" to="/Staff">
-        <i class="fas fa-chevron-left"></i> Volver
+        <i className="fas fa-chevron-left"></i> Volver
       </Link>
 
       <Card className="container my-5 mainSection">

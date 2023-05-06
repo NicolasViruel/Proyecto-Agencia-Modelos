@@ -10,14 +10,14 @@ const CrearModelo = () => {
         defaultValues:{
             nombreModelo:"",
             imagen:"",
-            edad: 1,
-            colorOjos:"",
-            colorPelo:"",
-            altura:1,
-            calzado:1,
-            pecho:1,
-            cintura:1,
-            cadera:1,
+            edad: 18,
+            colorOjos: "negro",
+            colorPelo: "negro",
+            altura:2.5,
+            calzado:33,
+            pecho:90,
+            cintura:55,
+            cadera:55,
         }}
     );
     const navegacion = useNavigate();
@@ -62,7 +62,7 @@ const CrearModelo = () => {
             {errors.nombreModelo?.message}
             </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formPrecio">
+        {/* <Form.Group className="mb-3" controlId="formPrecio">
           <Form.Label>Imagen URL*</Form.Label>
           <Form.Control type="text" placeholder="Ej: https://www.pexels.com/es-es/vans-en-blanco-y-negro-fuera-de-la-decoracion-para-colgar-en-la-pared-1230679/"
           {...register("imagen",{
@@ -74,7 +74,7 @@ const CrearModelo = () => {
           })}
           />
           <Form.Text className="text-danger">{errors.imagen?.message}</Form.Text>
-        </Form.Group>
+        </Form.Group> */}
         <Form.Group className="mb-3" controlId="formImagen">
           <Form.Label>Edad*</Form.Label>
           <Form.Control

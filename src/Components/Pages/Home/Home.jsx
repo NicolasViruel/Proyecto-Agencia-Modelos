@@ -11,7 +11,7 @@ const Home = () => {
 
   return (
     <div>
-      <h3>Bievenido {user.email} </h3>
+      {/* <h3>Bievenido {user.email} </h3> */}
       <Calesita />
 
     </div>
