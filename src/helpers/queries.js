@@ -134,3 +134,5 @@ export const editarAlumnoAPI = async(id,datosActualizados)=>{
         console.log(error)
     }
 }
+
+// Formulario Quiero ser Modelo API

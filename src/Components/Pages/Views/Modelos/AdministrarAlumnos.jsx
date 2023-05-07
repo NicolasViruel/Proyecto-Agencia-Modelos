@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Table } from 'react-bootstrap';
-import CrearAlumno from '../Modelos/CrearAlumno';
 import { useEffect, useState } from 'react';
 import { consultarAPIA } from '../../../../helpers/queries';
 import ItemAlumno from './ItemAlumno';
