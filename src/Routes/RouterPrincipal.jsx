@@ -22,6 +22,7 @@ import EditarAlumno from "../Components/Pages/Views/Modelos/EditarAlumno"
 //import EditarPerfil from '../Components/Pages/Academia/EditarPerfil'
 import AdministrarAlumnos from '../Components/Pages/Views/Modelos/AdministrarAlumnos'
 import AdministrarModelos from "../Components/Pages/Views/Modelos/AdministrarModelos"
+import Academia from '../Components/Pages/Views/Academia'
 
 
 const RouterPrincipal = () => {
@@ -47,6 +48,7 @@ const RouterPrincipal = () => {
           <Route exact path='/AboutUs' element={<AboutUs/>}/>
           <Route exact path='/Administrar/Administrar-Campus' element={<AdministrarAlumnos/>}/>
           <Route exact path='/Administrar/Administrar-Modelos' element={<AdministrarModelos/>}/>
+          <Route exact path='/Academia' element={<Academia/>}/>
           <Route exact path='/error404' element={<Error404/>}/>
 
           {/* Rutas privadas */}

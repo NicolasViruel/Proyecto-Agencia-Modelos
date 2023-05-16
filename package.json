@@ -13,6 +13,7 @@
     "clsx": "^1.2.1",
     "firebase": "^9.17.1",
     "formik": "^2.2.9",
+    "google-map-react": "^2.2.0",
     "mdb-react-ui-kit": "^5.1.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",

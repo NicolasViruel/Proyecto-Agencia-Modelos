@@ -1,6 +1,27 @@
 export const URL = "http://localhost:3004";
 export const URLA = "http://localhost:3004/alumnos";
 
+// Quiero ser Modelo Mensaje API
+export const quieroSerModeloAPI = async(mensaje)=>{
+    try{
+        const respuesta = await fetch(URL+"/"+"test"+"/"+"newcontact" ,{
+            method: "POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(mensaje)
+        });
+        console.log(respuesta);
+        return respuesta;
+    }catch(error){
+        console.log(error)
+    }
+}
+
+
+
+// Modelos API
+
 export const crearModeloAPI = async(modelo)=>{
     try{
         const respuesta = await fetch(URL+"/"+"test"+"/"+"newcontact" ,{

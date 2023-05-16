@@ -12,7 +12,7 @@ const CrearAlumno = () => {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      nombreModelo: "",
+      nombreAlumno: "",
       imagen: "",
       edad: 1,
       colorOjos: "",
