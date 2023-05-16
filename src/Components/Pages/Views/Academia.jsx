@@ -2,6 +2,8 @@ import React from "react";
 import { MDBCarousel, MDBCarouselItem } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap"
+import Accordion from 'react-bootstrap/Accordion';
+
 
 const Academia = () => {
   return (
@@ -104,8 +106,6 @@ const Academia = () => {
             alt="modelos tutoria"
           />
         </div>
-        <p className="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati itaque esse placeat in optio aut.</p>
-        <p className="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati itaque esse placeat in optio aut.</p>
         <div className="d-flex justify-content-center">
 
         <img
@@ -122,6 +122,53 @@ const Academia = () => {
         <p className="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores quis earum corrupti nisi perferendis numquam doloribus similique possimus reiciendis delectus, doloremque architecto libero!</p>
       </section>
       <hr className="mx-4"/>
+      <div><h3 className="text-center">Modelaje Profesional</h3>
+      <p className="text-center">Duracion 5 meses, incluye tu book de fotos</p>
+      <p className="text-center">EMD te brinda un entrenamiento, en el cual los cursantes adquieren las herramientas necesarias para convertirse en verdaderos profesionales de la moda.
+Este curso está orientado no solo a futuros modelos, si no también para aquellas personas que deseen mejorar su imagen y destacar su personalidad en la vida cotidiana.
+
+</p>
+<Accordion defaultActiveKey="0" className="mx-4">
+      <Accordion.Item eventKey="0">
+        <Accordion.Header>Modulo 1</Accordion.Header>
+        <Accordion.Body>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="1">
+        <Accordion.Header>Modulo 2</Accordion.Header>
+        <Accordion.Body>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="2">
+        <Accordion.Header>Modulo 3</Accordion.Header>
+        <Accordion.Body>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
+
+      </div>
+      <hr className="m-4"/>
       <div><h4 className="text-center my-5">Queres aprender mas sobre el mundo de modelaje?</h4>
       <p className="text-center">Te invitamos a que llenes este pequeño formulario y no dudes en hacer cualquier consulta</p>
       <Link  to={`/QuieroSerModelo`} ><Button variant="info" size="lg" className="m-3 text-center">Quiero ser modelo</Button></Link>
