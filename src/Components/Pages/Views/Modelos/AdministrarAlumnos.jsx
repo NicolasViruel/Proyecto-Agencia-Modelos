@@ -37,9 +37,9 @@ const AdministrarAlumnos = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {/*{
+                    {
                         alumnos.map((alumno)=> <ItemAlumno key={alumno.id} alumno={alumno} setAlumnos={setAlumnos}></ItemAlumno>)
-                    }*/}
+                    }
                 </tbody>
                 
                 

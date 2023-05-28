@@ -93,10 +93,17 @@ export const editarModeloAPI = async(id,datosActualizados)=>{
 // -------------------- Campus Alumnos API --------------------------------
 
 export const consultarAPIA = async()=>{
+    // try{
+    //     const respuesta = await fetch(URLA);
+    //     const listaAlumnos = await respuesta.json()
+    //     return listaAlumnos
+    // }catch(error){
+    //     console.log(error)
+    // }
     try{
-        const respuesta = await fetch(URLA);
-        const listaAlumnos = await respuesta.json()
-        return listaAlumnos
+        const respuesta = await fetch(URL+"/"+"api"+ "/" +"Alumnos");
+        const listaModelos = await respuesta.json()
+        return listaModelos
     }catch(error){
         console.log(error)
     }
