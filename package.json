@@ -20,6 +20,7 @@
     "react-hook-form": "^7.43.8",
     "react-router-dom": "^6.6.2",
     "sweetalert2": "^11.7.0",
+    "uuid": "^9.0.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {
