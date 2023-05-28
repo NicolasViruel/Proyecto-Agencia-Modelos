@@ -7,6 +7,7 @@ import {IoLogoWhatsapp, IoLogoInstagram, IoLogoFacebook,IoLogoYoutube} from "rea
 import locationemd from "../../../Image/locationemd.png"
 
 
+
 const Contacto = () => {
   const styles = {
     display: 'flex',
@@ -82,9 +83,9 @@ const Contacto = () => {
         <p><GoLocation/> Avenida Aconquija 1900, Yerba Buena Tucumán</p>
         <p><IoLogoWhatsapp/>+54 9 3812 02-1097</p>
         <p><GoMail/> emd.modelsagency@gmail.com</p>
-        <p><link rel="stylesheet" href="" /><IoLogoInstagram/> emd.modelsagency</p>
-        <p><link rel="stylesheet" href="" /><IoLogoFacebook/> EMD.modelsagency</p>
-        <p><link rel="stylesheet" href="" /><IoLogoYoutube/> EMD.modelsagency</p>
+        <p><a href="http://https://www.instagram.com/emd.modelsagency/"><IoLogoInstagram/> emd.modelsagency</a><a href=""></a> </p>
+        <p><a href="https://www.facebook.com/people/EMD-Models-Agency/100087454267211/"><IoLogoFacebook/> EMD.modelsagency</a></p>
+        <p><a href="https://www.youtube.com/@emdmodelsagency4902"><IoLogoYoutube/> EMD.modelsagency</a> </p>
         </div>
         <div>
           <img src={locationemd} alt="ubicacion google maps" style={{width:400, height:224}}/>
