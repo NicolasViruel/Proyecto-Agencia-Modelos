@@ -8,7 +8,7 @@ import Accordion from 'react-bootstrap/Accordion';
 const Academia = () => {
   return (
     <div>
-      <h2 className="text-center m-5">Academia</h2>
+      <h2 className="text-center my-5">Academia de Modelos</h2>
       <div className="mx-3">
         <MDBCarousel showControls showIndicators>
           <MDBCarouselItem

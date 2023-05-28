@@ -27,7 +27,7 @@ const QuieroSerModelo = () => {
 
   return (
     <div>
-      <h3 className="text-center my-2">Queres ser modelo ?</h3>
+      <h3 className="text-center my-2">Academia de Modelos</h3>
       <div className="text-center">
         <img src={backgroundimg} alt="fondo" style={estilo} />
         <hr className="mx-5" />
