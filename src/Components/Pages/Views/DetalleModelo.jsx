@@ -9,9 +9,12 @@ const DetalleProducto = () => {
   const { id } = useParams();
 
   useEffect(() => {
+    //si se me vence el token tengo que utilizar const imageFirebase = await getFile(fileName.metadata.fullPath) en respuesta con el async
     obtenerModeloAPI(id).then((respuesta) => {
       console.log(respuesta);
       if (respuesta.status === 200) {
+        // const imageFirebase = await getFile(respuesta.dato.path)
+        //respuesta.dato.imagen = imagenFirebase
         console.log(respuesta);
         setModelo(respuesta.dato);
       } else {
