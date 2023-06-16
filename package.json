@@ -13,13 +13,16 @@
     "clsx": "^1.2.1",
     "firebase": "^9.17.1",
     "formik": "^2.2.9",
+    "google-map-react": "^2.2.0",
     "mdb-react-ui-kit": "^5.1.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.8",
+    "react-icons": "^4.9.0",
     "react-router-dom": "^6.6.2",
     "sweetalert2": "^11.7.0",
+    "uuid": "^9.0.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {

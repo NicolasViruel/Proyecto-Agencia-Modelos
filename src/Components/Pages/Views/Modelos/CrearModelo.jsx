@@ -4,9 +4,10 @@ import Swal from "sweetalert2";
 import { crearModeloAPI } from "../../../../helpers/queries";
 import { useNavigate } from "react-router-dom";
 import {Link} from "react-router-dom"
+import { uploadFile, getFile } from "../../../../Firebase/firebase";
 
 const CrearModelo = () => {
-    const {register, handleSubmit, formState:{errors}} = useForm({
+    const {register,handleSubmit, formState:{errors}} = useForm({
         defaultValues:{
             nombreModelo:"",
             imagen:"",
@@ -18,14 +19,28 @@ const CrearModelo = () => {
             pecho:90,
             cintura:55,
             cadera:55,
+            path:"",
         }}
     );
     const navegacion = useNavigate();
 
-    const onSubmit = (datos)=>{
+    const onSubmit = async (datos)=>{
       console.log(datos)
+      
+      try {
+        //guardando datos de imagen
+        const fileImg = datos.imagen[0]
+        //subiendo los datos de la imagen
+        const fileName = await uploadFile(fileImg)
+        //opteniendo la imagen
+        const imageFirebase = await getFile(fileName.metadata.fullPath)
+        //guardo la imagen 
+        datos.path = imageFirebase
+      } catch (error) {
+        console.log(error);
+      }
       crearModeloAPI(datos).then((respuesta)=>{
-        if(respuesta.status === 201){
+        if(respuesta.status === 200){
           Swal.fire("Modelo creada", "La modelo fue creada correctamente","success");
           navegacion("/administrador");
         }else{
@@ -62,19 +77,16 @@ const CrearModelo = () => {
             {errors.nombreModelo?.message}
             </Form.Text>
         </Form.Group>
-        {/* <Form.Group className="mb-3" controlId="formPrecio">
+        <Form.Group className="mb-3" controlId="">
           <Form.Label>Imagen URL*</Form.Label>
-          <Form.Control type="text" placeholder="Ej: https://www.pexels.com/es-es/vans-en-blanco-y-negro-fuera-de-la-decoracion-para-colgar-en-la-pared-1230679/"
+          <Form.Control type="file" name="" id=""
           {...register("imagen",{
-            required:"La URL de la imagen es obligatoria",
-            pattern:{
-              value:/^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/,
-              message:"Debe ingresar una URL valida"
-            }
+            required:"La imagen es obligatoria",
+           
           })}
           />
           <Form.Text className="text-danger">{errors.imagen?.message}</Form.Text>
-        </Form.Group> */}
+        </Form.Group>
         <Form.Group className="mb-3" controlId="formImagen">
           <Form.Label>Edad*</Form.Label>
           <Form.Control
