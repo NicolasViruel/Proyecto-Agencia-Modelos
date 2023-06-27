@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import { crearModeloAPI } from "../../../../helpers/queries";
 import { useNavigate } from "react-router-dom";
 import {Link} from "react-router-dom"
-import { uploadFile, getFile } from "../../../../Firebase/firebase";
+/*import { uploadFile, getFile } from "../../../../Firebase/firebase";*/
 
 const CrearModelo = () => {
     const {register,handleSubmit, formState:{errors}} = useForm({
