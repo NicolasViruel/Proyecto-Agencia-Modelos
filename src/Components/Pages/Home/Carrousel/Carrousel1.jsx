@@ -2,9 +2,13 @@ import React from 'react'
 import { Carousel } from "react-bootstrap";
 import mod6 from "../img/mod6.jpg"
 /*import "../../Home/home.css"*/
+
+
+
+
 const Calesita1 = () => {
   return (
-    <Carousel fade className='container justify-content-center'>
+    <Carousel fade className='container justify-content-center w-50'>
       <Carousel.Item interval={1000} className=''>
        
         <img
