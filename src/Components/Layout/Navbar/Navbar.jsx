@@ -6,6 +6,7 @@ import { useAuth } from '../../../Context/authContext';
 import "./Navbar.css"
 
 
+
 const NavbarScroll = () => {
   const {logout, loading} = useAuth()
  
@@ -19,7 +20,8 @@ const NavbarScroll = () => {
   return (
     <Navbar className="bg-ligth text-center bg-grey" expand="lg">
     <Container fluid>
-      <Navbar.Brand href="/">E M D </Navbar.Brand>
+      <Navbar.Brand href="/"><p className='display-6'>E M D</p></Navbar.Brand>
+      
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">
         <Nav
