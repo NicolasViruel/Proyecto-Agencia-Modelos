@@ -21,7 +21,7 @@ const Home = () => {
         <img src={img2} alt="Modelos EMC" className=" w-100 rounded"/>
       </div>
      <div className="text-center m-3"> 
-     <a className=" btn btn-outline-dark" href="/Error404">Comunicate con nosotros</a>
+     <a className=" btn btn-outline-dark" href="/Contacto">Comunicate con nosotros</a>
      </div>
      <h1 className=" text-center py-5 display-2">Nuestro Staff</h1>
      <div className=" container text-center card-group">
