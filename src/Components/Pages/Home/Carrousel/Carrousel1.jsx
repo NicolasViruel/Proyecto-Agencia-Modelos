@@ -1,15 +1,22 @@
 import React from 'react'
 import { Carousel } from "react-bootstrap";
-import img1 from "../img/img1.jpg"
-const Calesita = () => {
+import mod6 from "../img/mod6.jpg"
+/*import "../../Home/home.css"*/
+
+
+
+
+const Calesita1 = () => {
   return (
-    <Carousel fade>
-      <Carousel.Item interval={1000}>
+    <Carousel fade className='container justify-content-center w-50'>
+      <Carousel.Item interval={1000} className=''>
+       
         <img
-          className="d-block w-100 rounded"
-          src={img1}
+          className=""
+          src={mod6}
           alt="modelo"
         />
+     
         <Carousel.Caption>
           <div className="trasluz">
 
@@ -17,11 +24,11 @@ const Calesita = () => {
             <p>Agencia de Modelos Tucuman Argentina</p>
           </div>
         </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item interval={1000}>
+      </Carousel.Item >
+      <Carousel.Item interval={1000} className=''>
         <img
-          className="d-block w-100 rounded"
-          src={img1}
+          className=""
+          src={mod6}
           alt="modelo"
         />
         <Carousel.Caption>
@@ -37,4 +44,4 @@ const Calesita = () => {
   )
 }
 
-export default Calesita
+export default Calesita1
