@@ -5,7 +5,7 @@ import Home from '../Components/Pages/Home'
 import Navbar from '../Components/Layout/Navbar'
 import Contacto from '../Components/Pages/Contacto'
 import QuieroSerModelo from '../Components/Pages/QuieroSerModelo'
-import Staff from '../Components/Pages/Staff'
+import Staff from '../Components/Pages/Staff/Staff'
 import Login from '../Components/Pages/Login'
 import RecuperarPass from '../Components/Pages/RecuperarPass/RecuperarPass'
 import { AuthProvider } from "../Context/authContext"

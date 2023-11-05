@@ -36,6 +36,7 @@ const NavbarScroll = () => {
           <NavLink className="nav-link " to="/Staff">Staff</NavLink>
           <NavLink className="nav-link " to="/AboutUs">Quienes Somos</NavLink>
           <NavLink className="nav-link " to="/Login">Login</NavLink>
+          <NavLink className="nav-link " to="/Academia">Academia</NavLink>
         
         </Nav>
         <Form className="d-flex">
