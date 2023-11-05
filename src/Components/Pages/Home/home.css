@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Maitree:wght@200;300&display=swap');
+
+.academyBox{
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.agencyBox{
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.agenciaText{
+    font-size: 50;
+    font-family: 'Maitree', serif
+    
+}
+
+.academiaText{
+    font-size: 50;
+    font-family: 'Maitree', serif
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+h1{
+    font-family: lato;
+}
+
+.container{
+    width: 75vw;
+    max-width: 1000px;
+    min-width: 320px;
+    margin: auto;
+
+}
+
+img {
+    width: 100%;
+    border-radius: 0px;
+    box-shadow: 0px 3px 5px rgba(15,15,15, .5);
+}

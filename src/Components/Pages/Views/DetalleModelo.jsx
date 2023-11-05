@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Badge, Card, Col, Row, Table } from "react-bootstrap";
+import { Card, Col, Row } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import { obtenerModeloAPI } from "../../../helpers/queries";
@@ -9,8 +9,13 @@ const DetalleProducto = () => {
   const { id } = useParams();
 
   useEffect(() => {
+    //si se me vence el token tengo que utilizar const imageFirebase = await getFile(fileName.metadata.fullPath) en respuesta con el async
     obtenerModeloAPI(id).then((respuesta) => {
+      console.log(respuesta);
       if (respuesta.status === 200) {
+        // const imageFirebase = await getFile(respuesta.dato.path)
+        //respuesta.dato.imagen = imagenFirebase
+        console.log(respuesta);
         setModelo(respuesta.dato);
       } else {
         Swal.fire("Ocurrio un error", "Vuelva a intentarlo", "error");
@@ -21,7 +26,7 @@ const DetalleProducto = () => {
   return (
     <div>
       <Link className="btn btn-primary m-5" to="/Staff">
-        <i class="fas fa-chevron-left"></i> Volver
+        <i className="fas fa-chevron-left"></i> Volver
       </Link>
 
       <Card className="container my-5 mainSection">

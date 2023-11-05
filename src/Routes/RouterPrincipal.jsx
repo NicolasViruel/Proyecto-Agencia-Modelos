@@ -5,13 +5,25 @@ import Home from '../Components/Pages/Home'
 import Navbar from '../Components/Layout/Navbar'
 import Contacto from '../Components/Pages/Contacto'
 import QuieroSerModelo from '../Components/Pages/QuieroSerModelo'
-import Staff from '../Components/Pages/Staff'
+import Staff from '../Components/Pages/Staff/Staff'
 import Login from '../Components/Pages/Login'
+import RecuperarPass from '../Components/Pages/RecuperarPass/RecuperarPass'
+import { AuthProvider } from "../Context/authContext"
+import { ProtectecRoute } from '../Components/ProtectecRoute/ProtectecRoute'
 import Administrador from "../Components/Pages/Views/Administrador"
 import EditarModelo from "../Components/Pages/Views/Modelos/EditarModelo"
 import CrearModelo from "../Components/Pages/Views/Modelos/CrearModelo"
 import DetalleModelo from "../Components/Pages/Views/DetalleModelo"
 import Error404 from '../Components/Pages/Views/Error404'
+import AboutUs from '../Components/Pages/Views/AboutUs'
+import Perfilacademico from '../Components/Pages/Academia/Perfilacademico'
+import CrearAlumno from "../Components/Pages/Views/Modelos/CrearAlumno"
+import EditarAlumno from "../Components/Pages/Views/Modelos/EditarAlumno"
+//import EditarPerfil from '../Components/Pages/Academia/EditarPerfil'
+import AdministrarAlumnos from '../Components/Pages/Views/Modelos/AdministrarAlumnos'
+import AdministrarModelos from "../Components/Pages/Views/Modelos/AdministrarModelos"
+import Academia from '../Components/Pages/Views/Academia'
+import Eventos from '../Components/Pages/Eventos'
 
 
 const RouterPrincipal = () => {
@@ -19,21 +31,34 @@ const RouterPrincipal = () => {
 
   return (
       <>
+      <AuthProvider>
       <Navbar/>
-      <Routes>
-        <Route exact path='/' element={<Home/>}/>
-        <Route exact path='/Contacto' element={<Contacto/>}/>
-        <Route exact path='/QuieroSerModelo' element={<QuieroSerModelo/>}/>
-        <Route exact path='/Staff' element={<Staff/>}/>
-        <Route exact path='/Login' element={<Login/>}/>
-        <Route exact path='/Administrador' element={<Administrador/>}/>
-        <Route exact path='/Administrar/crear-modelo' element={<CrearModelo/>}/>
-        <Route exact path='/Administrar/editar/:id' element={<EditarModelo/>}/>
-        <Route exact path='/detalle-modelo/:id' element={<DetalleModelo/>}/>
-        <Route exact path='/error404' element={<Error404/>}/>
+        <Routes>
+          <Route exact path='/' element={<Home/>}/>
+          <Route exact path='/Contacto' element={<Contacto/>}/>
+          <Route exact path='/QuieroSerModelo' element={<QuieroSerModelo/>}/>
+          <Route exact path='/Staff' element={<Staff/>}/>
+          <Route exact path='/Login' element={<Login/>}/>
+          <Route exact path='/recuperarPass' element={<RecuperarPass/>}/>
+          <Route exact path='/Administrador' element={<Administrador/>}/>
+          <Route exact path='/Administrar/crear-modelo' element={<CrearModelo/>}/>
+          <Route exact path='/Administrar/crear-alumno' element={<CrearAlumno/>}/>
+          <Route exact path='/Administrar/editar-alumno/:id' element={<EditarAlumno/>}/>
+          <Route exact path='/Administrar/editar/:id' element={<EditarModelo/>}/>
+          <Route exact path='/detalle-modelo/:id' element={<DetalleModelo/>}/>
+          <Route exact path='/AboutUs' element={<AboutUs/>}/>
+          <Route exact path='/Administrar/Administrar-Campus' element={<AdministrarAlumnos/>}/>
+          <Route exact path='/Administrar/Administrar-Modelos' element={<AdministrarModelos/>}/>
+          <Route exact path='/Academia' element={<Academia/>}/>
+          <Route exact path='/error404' element={<Error404/>}/>
+          <Route exact path='/Eventos' element={<Eventos/>}/>
+          {/* Rutas privadas */}
+          <Route exact path='/Perfilacademico' element={ <ProtectecRoute> <Perfilacademico/> </ProtectecRoute>}/>
 
-      </Routes>
-      
+
+
+        </Routes>
+      </AuthProvider>
       <Footer/>
       </>
       )

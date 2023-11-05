@@ -1,33 +1,33 @@
 import React from 'react'
 import { Carousel } from "react-bootstrap";
-
+import img1 from "../img/img1.jpg"
 const Calesita = () => {
   return (
     <Carousel fade>
       <Carousel.Item interval={1000}>
         <img
-          className="d-block w-100"
-          src="https://images.pexels.com/photos/247204/pexels-photo-247204.jpeg?auto=compress&cs=tinysrgb&w=600"
-          alt="cerveza2"
+          className="d-block w-100 rounded"
+          src={img1}
+          alt="modelo"
         />
         <Carousel.Caption>
           <div className="trasluz">
 
-            <h3>We're the best of the night</h3>
-            <p>With excellent atmosphere and the best music</p>
+            <h3>EMC Models</h3>
+            <p>Agencia de Modelos Tucuman Argentina</p>
           </div>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={1000}>
         <img
-          className="d-block w-100"
-          src="https://images.pexels.com/photos/3810832/pexels-photo-3810832.jpeg?auto=compress&cs=tinysrgb&w=600"
-          alt="cerveza3"
+          className="d-block w-100 rounded"
+          src={img1}
+          alt="modelo"
         />
         <Carousel.Caption>
           <div className="trasluz">
-            <h3>A great place</h3>
-            <p>To meet new people or enjoy with your friends</p>
+            <h3>Un excelente lugar </h3>
+            <p>Conocenos</p>
           </div>
         </Carousel.Caption>
       </Carousel.Item>

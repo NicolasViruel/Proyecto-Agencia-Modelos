@@ -3,3 +3,8 @@
     border-radius: 8px;
     font-weight: bolder;
 }
+
+.brand img{
+    width: 75px;
+    height: 50px;
+}
