@@ -1,0 +1,32 @@
+.fondoDivPrincipal{
+    background-color: #14242B;
+    
+}
+.fotoPerfil{
+    height: 100%;
+}
+
+.divDatosPerfil{
+    color: white;
+    width: 30%;
+}
+.divImagenPerfil{
+    width: 35%;
+}
+.divDatosAcademicos{
+    width: 20%;
+}
+
+
+.divInformeAcademico{
+   color: white;
+   border: 1px solid;
+   border-radius: 5px;
+   width: 300px;
+}
+
+.divEventos{
+    color: white;
+    border: 1px solid;
+    border-radius: 5px;
+}
