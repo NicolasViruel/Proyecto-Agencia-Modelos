@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { NavLink} from 'react-router-dom';
 import { useAuth } from '../../../Context/authContext';
 import "./Navbar.css"
-
+import logoNav from "../Navbar/img/logoNav.jpg"
 
 
 const NavbarScroll = () => {
@@ -19,35 +19,22 @@ const NavbarScroll = () => {
 
   return (
     <Navbar className="bg-ligth text-center bg-grey" expand="lg">
-    <Container fluid>
-      <Navbar.Brand href="/"><p className='display-6'>E M D</p></Navbar.Brand>
+    <Container>
+      <Navbar.Brand href="/" className='text-start container display-flex'><img src={logoNav} alt="logo EMD" className='w-25' /></Navbar.Brand>
       
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">
-        <Nav
-          className="me-auto my-4 my-lg-0"
-          style={{ maxHeight: '100px' }}
-          navbarScroll
-        >
+        <Nav className="me-auto my-4 my-lg-0 container " style={{ maxHeight: '100px' }}navbarScroll>
           <NavLink className="nav-link " to="/">Home</NavLink>
           <NavLink className="nav-link " to="/Contacto">Contacto</NavLink>
           <NavLink className="nav-link " to="/Eventos">Eventos</NavLink>
           <NavLink className="nav-link " to="/QuieroSerModelo">Quiero ser Modelo</NavLink>
           <NavLink className="nav-link " to="/Staff">Staff</NavLink>
           <NavLink className="nav-link " to="/AboutUs">Quienes Somos</NavLink>
-          <NavLink className="nav-link " to="/Login">Login</NavLink>
+   
         
         </Nav>
-        <Form className="d-flex">
-          <Form.Control
-            type="search"
-            placeholder="Search"
-            className="me-2"
-            aria-label="Search"
-          />
-          <Button variant="outline-dark">Buscar</Button>
-          <Button variant="outline-danger" onClick={handleLogout}>Logout</Button>
-        </Form>
+        
       </Navbar.Collapse>
     </Container>
   </Navbar>
