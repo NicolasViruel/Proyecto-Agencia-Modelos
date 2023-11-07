@@ -24,6 +24,7 @@ import AdministrarAlumnos from '../Components/Pages/Views/Modelos/AdministrarAlu
 import AdministrarModelos from "../Components/Pages/Views/Modelos/AdministrarModelos"
 import Academia from '../Components/Pages/Views/Academia'
 import Eventos from '../Components/Pages/Eventos'
+import SerModelo from '../Components/Pages/QuieroSerModelo/SerModelo'
 
 
 const RouterPrincipal = () => {
@@ -36,7 +37,8 @@ const RouterPrincipal = () => {
         <Routes>
           <Route exact path='/' element={<Home/>}/>
           <Route exact path='/Contacto' element={<Contacto/>}/>
-          <Route exact path='/QuieroSerModelo' element={<QuieroSerModelo/>}/>
+          <Route exact path='/QuieroSerModelo' element={<SerModelo/>}/>
+          <Route exact path='/ModeloFormulario' element={<QuieroSerModelo/>}/>
           <Route exact path='/Staff' element={<Staff/>}/>
           <Route exact path='/Login' element={<Login/>}/>
           <Route exact path='/recuperarPass' element={<RecuperarPass/>}/>

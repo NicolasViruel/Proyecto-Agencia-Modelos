@@ -2,7 +2,8 @@ import React from "react";
 import backgroundimg from "../../../Image/quierosermodeloEMD.jpg";
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import imagen from "../../../Image/404.jpg"
+import imagen from "../../../Image/404.jpg";
+import { Link } from "react-router-dom";
 
 const QuieroSerModelo = () => {
   const estilo = { height: "500px", width: "500px" };
@@ -20,54 +21,74 @@ const QuieroSerModelo = () => {
     },
   });
 
-  const onSubmit = (datos)=>{
-    console.log(datos)
-    console.log("desde mi funcion submit")
-  }
+  const onSubmit = (datos) => {
+    console.log(datos);
+    console.log("desde mi funcion submit");
+  };
 
   return (
     <div>
-      <h3 className="text-center my-2">Academia de Modelos</h3>
+      <h3 className="text-center my-2">ACADEMIA DE MODELOS</h3>
       <div className="text-center">
-        <img src={backgroundimg} alt="fondo" style={estilo} />
         <hr className="mx-5" />
-        <p className="mx-5" style={{ fontSize: 20 }}>
-          Desde EMD ayudamos a personas como vos, que quieren empezar en el
-          mundo del modelaje, y si ya tenes experiencia y queres postularte para
-          ser parte del staff EMD comunicanos
+        <p className="mx-5 text-center" style={{ fontSize: 20 }}>
+          En EMD, tu perfil es importante para nosotros. Queremos brindarte la
+          oportunidad de ser considerado para <br></br>
+          futuros trabajos en la industria de modelos. El formulario de
+          solicitud sera visto solo por nosotros y nadie <br></br>
+          más. Nos esformzamos por crear un entorno seguro y acogedor, donde
+          todas las identidades son bienvenidas. <br></br>
+          Tu éxito es nuestro objetivo, y estamos comprometidos a ayudarte a
+          alcanzar tus metas.
         </p>
-        <hr className="mx-3" />
       </div>
-      <section className="d-flex justify-content-around mx-3">
-        <div>
-          <Form className="my-5" onSubmit={handleSubmit(onSubmit)}>
-            <Form.Group className="mb-3" controlId="formNombre">
-              <Form.Label>Nombre *</Form.Label>
+      <div className="d-flex justify-content-center">
+      <div className="my-4 importante">
+        <h5 className="text-center">¡IMPORTANTE!</h5>
+        <p className="my-2 text-center">
+          Para aplicar, el modelo tiene que ser mayor a 18 años,<br></br>
+          de no ser el caso le pedimos que se comunique con nosotros a su
+          representante legal.
+        </p>
+        <div className="d-flex justify-content-center">
+        <div className="my-3 linkParaContacto text-center">
+          <Link className="contacto">Dirigir a metodos de contacto</Link>
+        </div>
+      </div>
+      </div>
+      </div>
+      <section className="d-flex justify-content-center">
+        <div >
+          <h5>Datos Personales</h5>
+          <Form className="my-5 " onSubmit={handleSubmit(onSubmit)}>
+            <div className="d-flex">
+            <Form.Group className="mb-3 mx-3" controlId="formNombre">
+              <Form.Label>Nombre y Apellido</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Ej: Mariana Monteros"
-                {...register("nombre", {
+                {...register("nombreapellido", {
                   required: "Este dato es obligatorio*",
                   minLength: {
-                    value: 5,
-                    message: "Debe ingresar como minimo 5 caracteres",
+                    value: 10,
+                    message: "Debe ingresar como minimo 10 caracteres",
                   },
                   maxLength: {
-                    value: 50,
-                    message: "Debe ingresar como maximo 50 caracteres",
+                    value: 60,
+                    message: "Debe ingresar como maximo 60 caracteres",
                   },
                 })}
               />
               <Form.Text className="text-danger">
-                {errors.nombre?.message}
+                {errors.nombreapellido?.message}
               </Form.Text>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formApellido">
-              <Form.Label>Apellido *</Form.Label>
+              <Form.Label>Email</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Ej: Mariana"
-                {...register("apellido", {
+                placeholder="MarianaM@gmail.com"
+                {...register("email", {
                   required: "Este dato es obligatorio*",
                   minLength: {
                     value: 5,
@@ -83,20 +104,22 @@ const QuieroSerModelo = () => {
                 {errors.nombre?.message}
               </Form.Text>
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formEdad">
-              <Form.Label>Edad*</Form.Label>
+            </div>
+            <div className="d-flex">
+            <Form.Group className="mb-3 mx-3" controlId="formEdad">
+              <Form.Label>Telefono</Form.Label>
               <Form.Control
                 type="number"
-                placeholder="Ej: 23"
-                {...register("edad", {
-                  required: "La edad es un valor requerido*",
+                placeholder="3814625333"
+                {...register("telefono", {
+                  required: "El telefono es un valor requerido*",
                   min: {
-                    value: 18,
-                    message: "La edad como minimo debe ser 18",
+                    value: 10,
+                    message: "El telefono debe tener como minimo 10 caracteres",
                   },
                   max: {
-                    value: 40,
-                    message: "La edad como maximo debe ser 40",
+                    value: 10,
+                    message: "El telefono debe tener como maximo 10 caracteres",
                   },
                 })}
               />
@@ -105,60 +128,26 @@ const QuieroSerModelo = () => {
               </Form.Text>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formCorreo">
-              <Form.Label>Correo*</Form.Label>
+              <Form.Label>Red Social</Form.Label>
               <Form.Control
-                type="mail"
-                placeholder="RobertoCarlos@gmail.com"
-                {...register("correo", {
-                  required: "El correo es un dato obligatorio",
-                  pattern: {
-                    value:
-                      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                    message: "Debe ingresar un correo valido",
-                  },
-                })}
+                type="name"
+                placeholder="Mariana Monteros (@marianamonterosoficial)"
+                
               />
               <Form.Text className="text-danger">
                 {errors.correo?.message}
               </Form.Text>
             </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formMensaje">
-              <Form.Label>Mensaje *</Form.Label>
-              <Form.Control
-                as="textarea"
-                rows={6}
-                type="text"
-                placeholder="Ej: Mi nombre es Mariana Monteros y quera consultar sobre EMD"
-                {...register("mensaje", {
-                  required: "Este dato es obligatorio*",
-                  minLength: {
-                    value: 5,
-                    message: "Debe ingresar como minimo 5 caracteres",
-                  },
-                  maxLength: {
-                    value: 50,
-                    message: "Debe ingresar como maximo 50 caracteres",
-                  },
-                })}
-              />
-              <Form.Text className="text-danger">
-                {errors.mensaje?.message}
-              </Form.Text>
-            </Form.Group>
+            </div>
+            
+            
+           
             <Button variant="primary" type="submit">
               Enviar
             </Button>
           </Form>
         </div>
-        <div>
-          <h3>Google Maps</h3>
-          <img
-            src={imagen}
-            alt=""
-            style={{height:"400px", width:"400px"}}
-          />
-        </div>
+        
       </section>
     </div>
   );

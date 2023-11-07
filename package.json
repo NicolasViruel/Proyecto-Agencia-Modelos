@@ -21,6 +21,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.8",
     "react-icons": "^4.9.0",
+    "react-multi-carousel": "^2.8.4",
     "react-router-dom": "^6.6.2",
     "sweetalert2": "^11.7.0",
     "uuid": "^9.0.0",
