@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { NavLink} from 'react-router-dom';
 import { useAuth } from '../../../Context/authContext';
 import "./Navbar.css"
-import logoNav from "../Navbar/img/logoNav.jpg"
+import logoNav from "../../Layout/Footer/img/logoemd.jpg"
 
 
 const NavbarScroll = () => {
@@ -20,7 +20,7 @@ const NavbarScroll = () => {
   return (
     <Navbar className="bg-ligth text-center bg-grey" expand="lg">
     <Container>
-      <Navbar.Brand href="/" className='text-start container display-flex'><img src={logoNav} alt="logo EMD" className='w-25' /></Navbar.Brand>
+      <Navbar.Brand href="/" className='text-start container display-flex'><img src={logoNav} alt="logo EMD" className='' id="logo" /></Navbar.Brand>
       
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">
