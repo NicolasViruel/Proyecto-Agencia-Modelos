@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import Majo from "../../../Image/MajoTopa.png";
 import Emilse from "../../../Image/EmilseCabrera.png";
 import Denice from "../../../Image/DeniceGomez.png";
-import EMD from "../../../Image/EMDlogo.png";
+import EMD from "../../../../src/Components/Pages/Views/Modelos/img/logoEMD.jpg";
 import {
   MDBCard,
   MDBCardImage,
@@ -18,7 +18,7 @@ const AboutUs = () => {
   return (
     <Container className="bg-light">
       <div className="text-center">
-        <img src={EMD} alt="" className="img-fluid" />
+        <img src={EMD} alt="" className="img-fluid w-25" />
       </div>
       <h3 className="text-center my-5 font-italic">
         <MDBIcon fas icon="quote-left fa-lg text-warning me-2" />
